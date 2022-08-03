@@ -1,0 +1,26 @@
+{
+  "name": "automatic-pinball-jackpot",
+  "uuid": "18442a11-0c92-48b3-b233-e9655b95d4ec",
+  "version": "3.5.2",
+  "description": "Automatic pinball jackpot made with Cocos Creator 3.5.2.",
+  "author": "Leandro Acquati <leandroacquati@gmail.com>",
+  "creator": {
+    "version": "3.5.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "@babel/eslint-parser": "^7.18.2",
+    "@typescript-eslint/eslint-plugin": "^5.27.0",
+    "@typescript-eslint/parser": "^5.27.0",
+    "eslint": "^8.16.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "prettier": "^2.6.2",
+    "typescript": "^4.7.2"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "private": true,
+  "repository": "https://github.com/Hashish-Crypto/automatic-pinball-jackpot.git"
+}
