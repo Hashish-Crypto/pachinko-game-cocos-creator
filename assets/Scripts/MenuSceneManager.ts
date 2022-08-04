@@ -17,7 +17,6 @@ export class MenuSceneManager extends Component {
   private _newGame() {
     this.newGameButton.getComponent(Button).interactable = false
     this.loadingLabel.active = true
-    console.log('Main.')
-    // director.loadScene('Main')
+    director.loadScene('Main')
   }
 }

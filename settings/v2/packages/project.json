@@ -1,0 +1,25 @@
+{
+  "__version__": "1.0.2",
+  "physics": {
+    "collisionGroups": [
+      {
+        "index": 1,
+        "name": "BLOCK"
+      },
+      {
+        "index": 2,
+        "name": "BALL"
+      },
+      {
+        "index": 3,
+        "name": "SENSOR"
+      }
+    ],
+    "collisionMatrix": {
+      "0": 0,
+      "1": 4,
+      "2": 10,
+      "3": 4
+    }
+  }
+}
