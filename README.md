@@ -1,7 +1,8 @@
-# Motherload Clone - Cocos Creator
+# Automatic Pinball Jackpot Game
 
-Automatic pinball jackpot game made with
-[Cocos Creator 3.5.2](https://www.cocos.com/en/creator).
+Automatic pinball jackpot game made with [Cocos Creator 3.5.2](https://www.cocos.com/en/creator).
+
+Play the game at: [acquati.itch.io/automatic-pinball-jackpot](https://acquati.itch.io/automatic-pinball-jackpot)
 
 ## Running the client locally
 
