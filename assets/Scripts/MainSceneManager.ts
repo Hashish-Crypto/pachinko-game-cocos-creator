@@ -7,6 +7,11 @@ import {
   Contact2DType,
   instantiate,
   Prefab,
+  RigidBody2D,
+  director,
+  Director,
+  Vec2,
+  randomRangeInt,
   // UITransform,
 } from 'cc'
 
@@ -14,21 +19,25 @@ const { ccclass, property } = _decorator
 
 @ccclass('MainSceneManager')
 export class MainSceneManager extends Component {
-  @property({ type: Prefab })
-  private pinPrefab: Prefab | null = null
-
   @property({ type: Node })
   private canvasNode: Node | null = null
 
   @property({ type: Node })
   private pinRef: Node | null = null
 
+  @property({ type: Prefab })
+  private pinPrefab: Prefab | null = null
+
   @property({ type: Node })
-  private ballNode: Node | null = null
+  private ballRef: Node | null = null
+
+  @property({ type: Prefab })
+  private ballPrefab: Prefab | null = null
 
   private _pinGrid: Node[][] = []
   private _pinGridHeight: number = 7
   private _pinGridWidth: number = 16
+  private _ball: Node | null = null
 
   onLoad() {
     // const canvasHeight = this.canvasNode.getComponent(UITransform).contentSize.height
@@ -49,12 +58,27 @@ export class MainSceneManager extends Component {
       }
     }
 
+    this._ball = instantiate(this.ballPrefab)
+    this._ball.setPosition(this._randomBallPosition(), 0)
+    this.ballRef.addChild(this._ball)
+
     PhysicsSystem2D.instance.on(Contact2DType.BEGIN_CONTACT, this._onBeginContact, this)
   }
 
   // update(deltaTime: number) {}
 
   private _onBeginContact(a: Collider2D, b: Collider2D) {
-    // console.log(a, b)
+    if (a.tag === 3 && b.tag === 1) {
+      director.once(Director.EVENT_AFTER_PHYSICS, () => {
+        const ballBody = this._ball.getComponent(RigidBody2D)
+        ballBody.linearVelocity = new Vec2(0, 0)
+        ballBody.angularVelocity = 0
+        this._ball.setPosition(this._randomBallPosition(), 0)
+      })
+    }
+  }
+
+  private _randomBallPosition() {
+    return randomRangeInt(0, 100) / 10 - 5
   }
 }
