@@ -433,13 +433,13 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "enabledContactListener": true,
+    "enabledContactListener": false,
     "bullet": false,
     "awakeOnLoad": true,
-    "_group": 8,
+    "_group": 2,
     "_type": 0,
     "_allowSleep": true,
-    "_gravityScale": 1,
+    "_gravityScale": 0,
     "_linearDamping": 0,
     "_angularDamping": 0,
     "_linearVelocity": {
@@ -460,10 +460,10 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "tag": 3,
-    "_group": 8,
+    "tag": 2,
+    "_group": 2,
     "_density": 1,
-    "_sensor": true,
+    "_sensor": false,
     "_friction": 0.2,
     "_restitution": 0,
     "_offset": {
@@ -563,7 +563,7 @@
     "_group": 8,
     "_type": 0,
     "_allowSleep": true,
-    "_gravityScale": 1,
+    "_gravityScale": 0,
     "_linearDamping": 0,
     "_angularDamping": 0,
     "_linearVelocity": {
@@ -681,13 +681,13 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "enabledContactListener": true,
+    "enabledContactListener": false,
     "bullet": false,
     "awakeOnLoad": true,
-    "_group": 8,
+    "_group": 2,
     "_type": 0,
     "_allowSleep": true,
-    "_gravityScale": 1,
+    "_gravityScale": 0,
     "_linearDamping": 0,
     "_angularDamping": 0,
     "_linearVelocity": {
@@ -708,10 +708,10 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "tag": 3,
-    "_group": 8,
+    "tag": 2,
+    "_group": 2,
     "_density": 1,
-    "_sensor": true,
+    "_sensor": false,
     "_friction": 0.2,
     "_restitution": 0,
     "_offset": {
@@ -805,13 +805,13 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "enabledContactListener": true,
+    "enabledContactListener": false,
     "bullet": false,
     "awakeOnLoad": true,
-    "_group": 8,
+    "_group": 2,
     "_type": 0,
     "_allowSleep": true,
-    "_gravityScale": 1,
+    "_gravityScale": 0,
     "_linearDamping": 0,
     "_angularDamping": 0,
     "_linearVelocity": {
@@ -832,10 +832,10 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "tag": 3,
-    "_group": 8,
+    "tag": 2,
+    "_group": 2,
     "_density": 1,
-    "_sensor": true,
+    "_sensor": false,
     "_friction": 0.2,
     "_restitution": 0,
     "_offset": {
@@ -864,7 +864,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": 289.99999999999994,
+      "y": 230,
       "z": 0
     },
     "_lrot": {
@@ -891,7 +891,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Jackpot1000",
+    "_name": "Jackpot18",
     "_objFlags": 0,
     "_parent": {
       "__id__": 4
@@ -1140,7 +1140,7 @@
     "__prefab": null,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 50.05,
+      "width": 35.03,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -1170,7 +1170,7 @@
       "b": 0,
       "a": 255
     },
-    "_string": "1000x",
+    "_string": "1.8x",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 18,
@@ -1266,7 +1266,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Jackpot130",
+    "_name": "Jackpot16",
     "_objFlags": 0,
     "_parent": {
       "__id__": 4
@@ -1515,7 +1515,7 @@
     "__prefab": null,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 40.04,
+      "width": 35.03,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -1545,7 +1545,7 @@
       "b": 0,
       "a": 255
     },
-    "_string": "130x",
+    "_string": "1.6x",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 18,
@@ -1641,7 +1641,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Jackpot26",
+    "_name": "Jackpot14",
     "_objFlags": 0,
     "_parent": {
       "__id__": 4
@@ -1890,7 +1890,7 @@
     "__prefab": null,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 30.03,
+      "width": 35.03,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -1920,7 +1920,7 @@
       "b": 0,
       "a": 255
     },
-    "_string": "26x",
+    "_string": "1.4x",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 18,
@@ -2016,7 +2016,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Jackpot9",
+    "_name": "Jackpot12",
     "_objFlags": 0,
     "_parent": {
       "__id__": 4
@@ -2265,7 +2265,7 @@
     "__prefab": null,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 20.02,
+      "width": 35.03,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -2295,7 +2295,7 @@
       "b": 0,
       "a": 255
     },
-    "_string": "9x",
+    "_string": "1.2x",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 18,
@@ -2391,7 +2391,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Jackpot4",
+    "_name": "Jackpot1",
     "_objFlags": 0,
     "_parent": {
       "__id__": 4
@@ -2670,7 +2670,7 @@
       "b": 0,
       "a": 255
     },
-    "_string": "4x",
+    "_string": "1x",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 18,
@@ -2766,7 +2766,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Jackpot2",
+    "_name": "Jackpot08",
     "_objFlags": 0,
     "_parent": {
       "__id__": 4
@@ -3015,7 +3015,7 @@
     "__prefab": null,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 20.02,
+      "width": 35.03,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -3045,7 +3045,7 @@
       "b": 0,
       "a": 255
     },
-    "_string": "2x",
+    "_string": "0.8x",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 18,
@@ -3141,7 +3141,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Jackpot08",
+    "_name": "Jackpot06",
     "_objFlags": 0,
     "_parent": {
       "__id__": 4
@@ -3420,7 +3420,7 @@
       "b": 0,
       "a": 255
     },
-    "_string": "0.8x",
+    "_string": "0.6x",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 18,
@@ -4641,7 +4641,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Jackpot08",
+    "_name": "Jackpot06",
     "_objFlags": 0,
     "_parent": {
       "__id__": 4
@@ -4920,7 +4920,7 @@
       "b": 0,
       "a": 255
     },
-    "_string": "0.8x",
+    "_string": "0.6x",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 18,
@@ -5016,7 +5016,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Jackpot2",
+    "_name": "Jackpot08",
     "_objFlags": 0,
     "_parent": {
       "__id__": 4
@@ -5265,7 +5265,7 @@
     "__prefab": null,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 20.02,
+      "width": 35.03,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -5295,7 +5295,7 @@
       "b": 0,
       "a": 255
     },
-    "_string": "2x",
+    "_string": "0.8x",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 18,
@@ -5391,7 +5391,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Jackpot4",
+    "_name": "Jackpot1",
     "_objFlags": 0,
     "_parent": {
       "__id__": 4
@@ -5670,7 +5670,7 @@
       "b": 0,
       "a": 255
     },
-    "_string": "4x",
+    "_string": "1x",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 18,
@@ -5766,7 +5766,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Jackpot9",
+    "_name": "Jackpot12",
     "_objFlags": 0,
     "_parent": {
       "__id__": 4
@@ -6015,7 +6015,7 @@
     "__prefab": null,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 20.02,
+      "width": 35.03,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -6045,7 +6045,7 @@
       "b": 0,
       "a": 255
     },
-    "_string": "9x",
+    "_string": "1.2x",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 18,
@@ -6141,7 +6141,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Jackpot26",
+    "_name": "Jackpot14",
     "_objFlags": 0,
     "_parent": {
       "__id__": 4
@@ -6390,7 +6390,7 @@
     "__prefab": null,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 30.03,
+      "width": 35.03,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -6420,7 +6420,7 @@
       "b": 0,
       "a": 255
     },
-    "_string": "26x",
+    "_string": "1.4x",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 18,
@@ -6516,7 +6516,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Jackpot130",
+    "_name": "Jackpot16",
     "_objFlags": 0,
     "_parent": {
       "__id__": 4
@@ -6765,7 +6765,7 @@
     "__prefab": null,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 40.04,
+      "width": 35.03,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -6795,7 +6795,7 @@
       "b": 0,
       "a": 255
     },
-    "_string": "130x",
+    "_string": "1.6x",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 18,
@@ -6891,7 +6891,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Jackpot1000",
+    "_name": "Jackpot18",
     "_objFlags": 0,
     "_parent": {
       "__id__": 4
@@ -7140,7 +7140,7 @@
     "__prefab": null,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 50.05,
+      "width": 35.03,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -7170,7 +7170,7 @@
       "b": 0,
       "a": 255
     },
-    "_string": "1000x",
+    "_string": "1.8x",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 18,
