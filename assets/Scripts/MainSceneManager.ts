@@ -98,26 +98,33 @@ export class MainSceneManager extends Component {
     if (a.tag === 3 && b.tag === 1 && this._respawnBallEnabled) {
       this._respawnBall()
     } else if (a.tag === 4 && b.tag === 1 && this._respawnBallEnabled) {
-      if (a.node.name === 'Jackpot18') {
-        this._setCash(Math.floor(this._persistentNode.cash * 1.8 * 100) / 100)
-      } else if (a.node.name === 'Jackpot16') {
-        this._setCash(Math.floor(this._persistentNode.cash * 1.6 * 100) / 100)
-      } else if (a.node.name === 'Jackpot14') {
-        this._setCash(Math.floor(this._persistentNode.cash * 1.4 * 100) / 100)
-      } else if (a.node.name === 'Jackpot12') {
-        this._setCash(Math.floor(this._persistentNode.cash * 1.2 * 100) / 100)
-      } else if (a.node.name === 'Jackpot1') {
-        this._setCash(Math.floor(this._persistentNode.cash * 1 * 100) / 100)
-      } else if (a.node.name === 'Jackpot08') {
-        this._setCash(Math.floor(this._persistentNode.cash * 0.8 * 100) / 100)
-      } else if (a.node.name === 'Jackpot06') {
-        this._setCash(Math.floor(this._persistentNode.cash * 0.6 * 100) / 100)
-      } else if (a.node.name === 'Jackpot04') {
-        this._setCash(Math.floor(this._persistentNode.cash * 0.4 * 100) / 100)
-      } else if (a.node.name === 'Jackpot02') {
-        this._setCash(Math.floor(this._persistentNode.cash * 0.2 * 100) / 100)
+      if (this._persistentNode.throwRounds >= 1) {
+        if (a.node.name === 'Jackpot18') {
+          this._setCash(Math.floor(this._persistentNode.cash * 1.8 * 100) / 100)
+        } else if (a.node.name === 'Jackpot16') {
+          this._setCash(Math.floor(this._persistentNode.cash * 1.6 * 100) / 100)
+        } else if (a.node.name === 'Jackpot14') {
+          this._setCash(Math.floor(this._persistentNode.cash * 1.4 * 100) / 100)
+        } else if (a.node.name === 'Jackpot12') {
+          this._setCash(Math.floor(this._persistentNode.cash * 1.2 * 100) / 100)
+        } else if (a.node.name === 'Jackpot1') {
+          this._setCash(Math.floor(this._persistentNode.cash * 1 * 100) / 100)
+        } else if (a.node.name === 'Jackpot08') {
+          this._setCash(Math.floor(this._persistentNode.cash * 0.8 * 100) / 100)
+        } else if (a.node.name === 'Jackpot06') {
+          this._setCash(Math.floor(this._persistentNode.cash * 0.6 * 100) / 100)
+        } else if (a.node.name === 'Jackpot04') {
+          this._setCash(Math.floor(this._persistentNode.cash * 0.4 * 100) / 100)
+        } else if (a.node.name === 'Jackpot02') {
+          this._setCash(Math.floor(this._persistentNode.cash * 0.2 * 100) / 100)
+        }
+        this._persistentNode.throwRounds -= 1
+        this._respawnBall()
       }
-      this._respawnBall()
+      if (this._persistentNode.throwRounds === 0) {
+        this._persistentNode.resetThrowRounds()
+        director.loadScene('Menu')
+      }
     }
   }
 
