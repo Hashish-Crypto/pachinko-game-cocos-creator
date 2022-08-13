@@ -7349,7 +7349,7 @@
       "b": 251,
       "a": 255
     },
-    "_string": "HC$ 1000000000",
+    "_string": "HC$ 1000000000.00",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 20,
@@ -7732,7 +7732,7 @@
     "__prefab": null,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 180,
+      "width": 220,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -7821,7 +7821,7 @@
     "__prefab": null,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 180,
+      "width": 220,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -7871,7 +7871,7 @@
     "__prefab": null,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 156.8,
+      "width": 184.6,
       "height": 37.8
     },
     "_anchorPoint": {
