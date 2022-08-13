@@ -148,6 +148,20 @@
     "loadingLabel": {
       "__id__": 80
     },
+    "betToggles": [
+      {
+        "__id__": 39
+      },
+      {
+        "__id__": 49
+      },
+      {
+        "__id__": 59
+      },
+      {
+        "__id__": 69
+      }
+    ],
     "_id": "00AiP+xhRNnou6p6+LVdzy"
   },
   {
@@ -1106,7 +1120,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Toggle075",
+    "_name": "Toggle1",
     "_objFlags": 0,
     "_parent": {
       "__id__": 29
@@ -1493,7 +1507,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Toggle050",
+    "_name": "Toggle2",
     "_objFlags": 0,
     "_parent": {
       "__id__": 29
@@ -1880,7 +1894,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Toggle2",
+    "_name": "Toggle3",
     "_objFlags": 0,
     "_parent": {
       "__id__": 29
@@ -2267,7 +2281,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Toggle3",
+    "_name": "Toggle4",
     "_objFlags": 0,
     "_parent": {
       "__id__": 29
