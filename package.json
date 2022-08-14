@@ -1,8 +1,8 @@
 {
-  "name": "automatic-pinball-jackpot",
+  "name": "pachinko-game-cocos-creator",
   "uuid": "18442a11-0c92-48b3-b233-e9655b95d4ec",
   "version": "3.5.2",
-  "description": "Automatic pinball jackpot made with Cocos Creator 3.5.2.",
+  "description": "Pachinko game made with Cocos Creator 3.5.2.",
   "author": "Leandro Acquati <leandroacquati@gmail.com>",
   "creator": {
     "version": "3.5.2"
@@ -24,5 +24,5 @@
   "license": "MIT",
   "main": "index.js",
   "private": true,
-  "repository": "https://github.com/Hashish-Crypto/automatic-pinball-jackpot.git"
+  "repository": "https://github.com/Hashish-Crypto/pachinko-game-cocos-creator"
 }

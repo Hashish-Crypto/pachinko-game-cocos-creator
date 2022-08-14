@@ -1,14 +1,14 @@
-# Automatic Pinball Jackpot Game
+# Pachinko Game Cocos Creator
 
-Automatic pinball jackpot game made with [Cocos Creator 3.5.2](https://www.cocos.com/en/creator).
+Pachinko game made with [Cocos Creator 3.5.2](https://www.cocos.com/en/creator).
 
-Play the game at: [acquati.itch.io/automatic-pinball-jackpot](https://acquati.itch.io/automatic-pinball-jackpot)
+Play the game at: [acquati.itch.io/pachinko-game-cocos-creator](https://acquati.itch.io/pachinko-game-cocos-creator)
 
 ## Running the client locally
 
 ```
-git clone https://github.com/Hashish-Crypto/automatic-pinball-jackpot.git
-cd automatic-pinball-jackpot
+git clone https://github.com/Hashish-Crypto/pachinko-game-cocos-creator.git
+cd pachinko-game-cocos-creator
 npm install
 ```
 
