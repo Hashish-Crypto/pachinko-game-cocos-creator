@@ -7,7 +7,7 @@ const { ccclass, property } = _decorator
 @ccclass('MenuSceneManager')
 export class MenuSceneManager extends Component {
   @property({ type: Label })
-  public cashLabel: Label | null = null
+  public balanceLabel: Label | null = null
 
   @property(EditBoxComponent)
   public betEditBox: EditBoxComponent | null = null
@@ -32,7 +32,9 @@ export class MenuSceneManager extends Component {
   onLoad() {
     this._persistentNode = find('PersistentNode').getComponent(PersistentNode)
 
-    this._setCash(this._persistentNode.cash)
+    this._persistentNode.throwRounds = this._persistentNode.throwRoundsMax
+    this._setBalance(this._persistentNode.balance)
+    this._setBet(0)
 
     this.betToggles.forEach((betToggle) => {
       if (betToggle.isChecked) {
@@ -55,6 +57,8 @@ export class MenuSceneManager extends Component {
     })
 
     this._setBet(this._persistentNode.bet)
+    this._setHit(0)
+    this._setPrize(0)
 
     this.betEditBox.node.on(EditBoxComponent.EventType.TEXT_CHANGED, this._handleBetChange, this)
     this.betToggles.forEach((betToggle) => {
@@ -63,27 +67,31 @@ export class MenuSceneManager extends Component {
     this.newGameButton.on(Button.EventType.CLICK, this._newGame, this)
   }
 
-  private _newGame() {
-    if (this._persistentNode.bet <= 0) return
-
-    this.newGameButton.getComponent(Button).interactable = false
-    this.loadingLabel.active = true
-    director.loadScene('Main')
-  }
-
-  private _setCash(value: number) {
-    this._persistentNode.cash = exactMath.floor(value, -2)
-    this.cashLabel.string = 'HC$ ' + this._persistentNode.cash.toFixed(2)
-  }
-
-  private _handleBetChange(editBox: EditBoxComponent) {
-    this._setBet(Number(editBox.string))
+  private _setBalance(value: number) {
+    this._persistentNode.balance = exactMath.floor(value, -2)
+    this.balanceLabel.string = 'HC$' + this._persistentNode.balance.toFixed(2)
   }
 
   private _setBet(value: number) {
     this._persistentNode.bet = exactMath.floor(value, -2)
-    this._setHit(this._persistentNode.bet)
-    this._setPrize(this._persistentNode.bet)
+  }
+
+  private _setHit(value: number) {
+    this._persistentNode.hit = exactMath.floor(exactMath.mul(value, this._persistentNode.betTarget), -2)
+
+    if (this._persistentNode.betTarget < 1) {
+      this.hitLabel.string = 'Value to hit less than: HC$' + this._persistentNode.hit.toFixed(2)
+    } else if (this._persistentNode.betTarget > 1) {
+      this.hitLabel.string = 'Value to hit more than: HC$' + this._persistentNode.hit.toFixed(2)
+    }
+  }
+
+  private _setPrize(value: number) {
+    this._persistentNode.prize = exactMath.floor(
+      exactMath.sub(exactMath.mul(value, this._persistentNode.betMultiplier), value),
+      -2
+    )
+    this.prizeLabel.string = 'Prize: HC$' + this._persistentNode.prize.toFixed(2)
   }
 
   private _setBetTarget(betToggle: ToggleComponent) {
@@ -114,15 +122,22 @@ export class MenuSceneManager extends Component {
     })
 
     this._setBet(this._persistentNode.bet)
+    this._setHit(this._persistentNode.bet)
+    this._setPrize(this._persistentNode.bet)
   }
 
-  private _setHit(value: number) {
-    this._persistentNode.hit = exactMath.floor(exactMath.mul(value, this._persistentNode.betTarget), -2)
-    this.hitLabel.string = 'Value to hit: HC$ ' + this._persistentNode.hit.toFixed(2)
+  private _handleBetChange(editBox: EditBoxComponent) {
+    this._setBet(Number(editBox.string))
+    this._setHit(this._persistentNode.bet)
+    this._setPrize(this._persistentNode.bet)
   }
 
-  private _setPrize(value: number) {
-    this._persistentNode.prize = exactMath.floor(exactMath.mul(value, this._persistentNode.betMultiplier), -2)
-    this.prizeLabel.string = 'Prize: HC$ ' + this._persistentNode.prize.toFixed(2)
+  private _newGame() {
+    if (this._persistentNode.bet <= 0 || exactMath.sub(this._persistentNode.balance, this._persistentNode.bet) < 0)
+      return
+
+    this.newGameButton.getComponent(Button).interactable = false
+    this.loadingLabel.active = true
+    director.loadScene('Main')
   }
 }

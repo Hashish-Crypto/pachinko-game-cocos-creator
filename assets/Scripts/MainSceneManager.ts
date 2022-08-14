@@ -1,3 +1,4 @@
+import exactMath from 'exact-math'
 import {
   _decorator,
   Component,
@@ -14,6 +15,7 @@ import {
   randomRangeInt,
   Label,
   find,
+  Button,
   // UITransform,
 } from 'cc'
 import { PersistentNode } from './PersistentNode'
@@ -38,7 +40,22 @@ export class MainSceneManager extends Component {
   private ballPrefab: Prefab | null = null
 
   @property({ type: Label })
-  public cashLabel: Label | null = null
+  public potLabel: Label | null = null
+
+  @property({ type: Label })
+  public hitLabel: Label | null = null
+
+  @property({ type: Label })
+  public prizeLabel: Label | null = null
+
+  @property({ type: Label })
+  public throwRoundsLabel: Label | null = null
+
+  @property({ type: Node })
+  private gameOverUI: Node | null = null
+
+  @property({ type: Node })
+  private menuButton: Node | null = null
 
   private _pinGrid: Node[][] = []
   private _pinGridHeight: number = 7
@@ -47,11 +64,17 @@ export class MainSceneManager extends Component {
   private _respawnBallEnabled = true
   private _ballReleased = false
   private _persistentNode: PersistentNode | null = null
+  private _pot: number | null = null
 
   onLoad() {
+    this.gameOverUI.active = false
     this._persistentNode = find('PersistentNode').getComponent(PersistentNode)
     // const canvasHeight = this.canvasNode.getComponent(UITransform).contentSize.height
     // const canvasWidth = this.canvasNode.getComponent(UITransform).contentSize.width
+    this._setHit(this._persistentNode.hit)
+    this._setPot(this._persistentNode.bet)
+    this._setPrize(this._persistentNode.prize)
+    this._setThrowRounds(this._persistentNode.throwRounds)
 
     for (let y = 0; y < this._pinGridHeight; y += 1) {
       this._pinGrid[y] = []
@@ -78,17 +101,15 @@ export class MainSceneManager extends Component {
     }
     this.ballRef.addChild(this._ball)
 
-    this._setCash(this._persistentNode.cash)
-
     PhysicsSystem2D.instance.on(Contact2DType.BEGIN_CONTACT, this._onBeginContact, this)
     this.canvasNode.on(Node.EventType.TOUCH_START, this._onTouchScreen, this)
   }
 
   update(deltaTime: number) {
     if (!this._ballReleased) {
-      if (this._ball.position.x >= 150) {
+      if (this._ball.position.x >= 175) {
         this._ball.getComponent(RigidBody2D).linearVelocity = new Vec2(-6, 0)
-      } else if (this._ball.position.x <= -150) {
+      } else if (this._ball.position.x <= -175) {
         this._ball.getComponent(RigidBody2D).linearVelocity = new Vec2(6, 0)
       }
     }
@@ -98,34 +119,69 @@ export class MainSceneManager extends Component {
     if (a.tag === 3 && b.tag === 1 && this._respawnBallEnabled) {
       this._respawnBall()
     } else if (a.tag === 4 && b.tag === 1 && this._respawnBallEnabled) {
-      if (this._persistentNode.throwRounds >= 1) {
-        if (a.node.name === 'Jackpot18') {
-          this._setCash(Math.floor(this._persistentNode.cash * 1.8 * 100) / 100)
-        } else if (a.node.name === 'Jackpot16') {
-          this._setCash(Math.floor(this._persistentNode.cash * 1.6 * 100) / 100)
-        } else if (a.node.name === 'Jackpot14') {
-          this._setCash(Math.floor(this._persistentNode.cash * 1.4 * 100) / 100)
-        } else if (a.node.name === 'Jackpot12') {
-          this._setCash(Math.floor(this._persistentNode.cash * 1.2 * 100) / 100)
-        } else if (a.node.name === 'Jackpot1') {
-          this._setCash(Math.floor(this._persistentNode.cash * 1 * 100) / 100)
-        } else if (a.node.name === 'Jackpot08') {
-          this._setCash(Math.floor(this._persistentNode.cash * 0.8 * 100) / 100)
-        } else if (a.node.name === 'Jackpot06') {
-          this._setCash(Math.floor(this._persistentNode.cash * 0.6 * 100) / 100)
-        } else if (a.node.name === 'Jackpot04') {
-          this._setCash(Math.floor(this._persistentNode.cash * 0.4 * 100) / 100)
-        } else if (a.node.name === 'Jackpot02') {
-          this._setCash(Math.floor(this._persistentNode.cash * 0.2 * 100) / 100)
-        }
-        this._persistentNode.throwRounds -= 1
-        this._respawnBall()
+      if (a.node.name === 'Jackpot18') {
+        this._setPot(exactMath.mul(this._pot, 1.8))
+      } else if (a.node.name === 'Jackpot16') {
+        this._setPot(exactMath.mul(this._pot, 1.6))
+      } else if (a.node.name === 'Jackpot14') {
+        this._setPot(exactMath.mul(this._pot, 1.4))
+      } else if (a.node.name === 'Jackpot12') {
+        this._setPot(exactMath.mul(this._pot, 1.2))
+      } else if (a.node.name === 'Jackpot1') {
+        this._setPot(exactMath.mul(this._pot, 1))
+      } else if (a.node.name === 'Jackpot08') {
+        this._setPot(exactMath.mul(this._pot, 0.8))
+      } else if (a.node.name === 'Jackpot06') {
+        this._setPot(exactMath.mul(this._pot, 0.6))
+      } else if (a.node.name === 'Jackpot04') {
+        this._setPot(exactMath.mul(this._pot, 0.4))
+      } else if (a.node.name === 'Jackpot02') {
+        this._setPot(exactMath.mul(this._pot, 0.2))
       }
-      if (this._persistentNode.throwRounds === 0) {
-        this._persistentNode.resetThrowRounds()
-        director.loadScene('Menu')
+      this._setThrowRounds(this._persistentNode.throwRounds - 1)
+
+      if (this._persistentNode.throwRounds >= 1) {
+        this._respawnBall()
+      } else if (this._persistentNode.throwRounds === 0) {
+        this._respawnBallEnabled = false
+        this.gameOverUI.active = true
+
+        if (this._persistentNode.betTarget < 1 && this._persistentNode.hit >= this._pot) {
+          this._persistentNode.balance += this._persistentNode.prize
+          this.gameOverUI.getChildByName('WinStateLabel').getComponent(Label).string = 'You win!'
+          this.gameOverUI.getChildByName('PrizeStateLabel').getComponent(Label).string =
+            'Prize: HC$' + this._persistentNode.prize.toFixed(2)
+        } else if (this._persistentNode.betTarget > 1 && this._persistentNode.hit <= this._pot) {
+          this._persistentNode.balance += this._persistentNode.prize
+          this.gameOverUI.getChildByName('WinStateLabel').getComponent(Label).string = 'You win!'
+          this.gameOverUI.getChildByName('PrizeStateLabel').getComponent(Label).string =
+            'Prize: HC$' + this._persistentNode.prize.toFixed(2)
+        } else {
+          this._persistentNode.balance -= this._persistentNode.prize
+          this.gameOverUI.getChildByName('WinStateLabel').getComponent(Label).string = 'You loose!'
+          this.gameOverUI.getChildByName('PrizeStateLabel').getComponent(Label).string = 'Prize: HC$0.00'
+        }
+        this.gameOverUI.getChildByName('BetStateLabel').getComponent(Label).string =
+          'Bet: HC$' + this._persistentNode.bet.toFixed(2)
+        this.gameOverUI.getChildByName('PotStateLabel').getComponent(Label).string =
+          'Final pot: HC$' + this._pot.toFixed(2)
+        if (this._persistentNode.betTarget < 1) {
+          this.gameOverUI.getChildByName('HitStateLabel').getComponent(Label).string =
+            'To hit less than: HC$' + this._persistentNode.hit.toFixed(2)
+        } else if (this._persistentNode.betTarget > 1) {
+          this.gameOverUI.getChildByName('HitStateLabel').getComponent(Label).string =
+            'To hit more than: HC$' + this._persistentNode.hit.toFixed(2)
+        }
+        this.gameOverUI.getChildByName('BalanceStateLabel').getComponent(Label).string =
+          'Balance: HC$' + this._persistentNode.balance.toFixed(2)
+
+        this.menuButton.on(Button.EventType.CLICK, this._menu, this)
       }
     }
+  }
+
+  private _menu() {
+    director.loadScene('Menu')
   }
 
   private _onTouchScreen() {
@@ -158,8 +214,23 @@ export class MainSceneManager extends Component {
     })
   }
 
-  private _setCash(value: number) {
-    this._persistentNode.cash = value
-    this.cashLabel.string = 'HC$ ' + this._persistentNode.cash.toFixed(2)
+  private _setHit(value: number) {
+    this._persistentNode.hit = value
+    this.hitLabel.string = 'To hit: HC$' + this._persistentNode.hit.toFixed(2)
+  }
+
+  private _setPot(value: number) {
+    this._pot = exactMath.floor(value, -2)
+    this.potLabel.string = 'Pot: HC$' + this._pot.toFixed(2)
+  }
+
+  private _setPrize(value: number) {
+    this._persistentNode.prize = value
+    this.prizeLabel.string = 'Prize: HC$' + this._persistentNode.prize.toFixed(2)
+  }
+
+  private _setThrowRounds(value: number) {
+    this._persistentNode.throwRounds = value
+    this.throwRoundsLabel.string = 'Throws: ' + this._persistentNode.throwRounds
   }
 }
