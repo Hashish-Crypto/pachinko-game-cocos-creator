@@ -10,7 +10,7 @@ export class PersistentNode extends Component {
   public prize: number | null = null
   public betMultiplier: number | null = null
   public betTarget: number | null = null
-  public throwRoundsMax: number = 4
+  public throwRoundsMax: number = 6
   public throwRounds: number | null = null
 
   onLoad() {

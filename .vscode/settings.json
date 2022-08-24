@@ -28,20 +28,7 @@
     "local/": true,
     "temp/": true
   },
-  "cSpell.words": [
-    "Aabb",
-    "acquati",
-    "bronzium",
-    "ccclass",
-    "Colyseus",
-    "gamepadconnected",
-    "gamepaddisconnected",
-    "goldium",
-    "interactable",
-    "ironium",
-    "platinium",
-    "silverium"
-  ],
+  "cSpell.words": ["Aabb", "acquati", "ccclass", "Colyseus", "gamepadconnected", "gamepaddisconnected", "interactable"],
   "editor.foldingMaximumRegions": 50000,
   "files.eol": "\n",
   "files.insertFinalNewline": true
