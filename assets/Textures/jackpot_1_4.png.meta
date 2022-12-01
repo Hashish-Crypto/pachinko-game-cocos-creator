@@ -2,7 +2,7 @@
   "ver": "1.0.23",
   "importer": "image",
   "imported": true,
-  "uuid": "5d85ae98-1c28-427c-8de5-1b30a3c1ee78",
+  "uuid": "2cbd212f-cdc9-44a5-8f05-2706747b7e69",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "5d85ae98-1c28-427c-8de5-1b30a3c1ee78@6c48a",
-      "displayName": "pin",
+      "uuid": "2cbd212f-cdc9-44a5-8f05-2706747b7e69@6c48a",
+      "displayName": "jackpot_1_4",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "5d85ae98-1c28-427c-8de5-1b30a3c1ee78",
+        "imageUuidOrDatabaseUri": "2cbd212f-cdc9-44a5-8f05-2706747b7e69",
         "isUuid": true,
         "minfilter": "nearest",
         "magfilter": "nearest",
@@ -33,29 +33,29 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "5d85ae98-1c28-427c-8de5-1b30a3c1ee78@f9941",
-      "displayName": "pin",
+      "uuid": "2cbd212f-cdc9-44a5-8f05-2706747b7e69@f9941",
+      "displayName": "jackpot_1_4",
       "id": "f9941",
       "name": "spriteFrame",
       "userData": {
-        "trimType": "auto",
+        "trimType": "none",
         "trimThreshold": 1,
         "rotated": false,
         "offsetX": 0,
         "offsetY": 0,
         "trimX": 0,
         "trimY": 0,
-        "width": 11,
-        "height": 11,
-        "rawWidth": 11,
-        "rawHeight": 11,
+        "width": 56,
+        "height": 42,
+        "rawWidth": 56,
+        "rawHeight": 42,
         "borderTop": 0,
         "borderBottom": 0,
         "borderLeft": 0,
         "borderRight": 0,
         "packable": true,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "5d85ae98-1c28-427c-8de5-1b30a3c1ee78@6c48a",
+        "imageUuidOrDatabaseUri": "2cbd212f-cdc9-44a5-8f05-2706747b7e69@6c48a",
         "atlasUuid": ""
       },
       "ver": "1.0.9",
@@ -70,6 +70,6 @@
     "type": "sprite-frame",
     "fixAlphaTransparencyArtifacts": true,
     "hasAlpha": true,
-    "redirect": "5d85ae98-1c28-427c-8de5-1b30a3c1ee78@f9941"
+    "redirect": "2cbd212f-cdc9-44a5-8f05-2706747b7e69@f9941"
   }
 }

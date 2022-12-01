@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "burst1",
+    "_name": "Burst1",
     "_objFlags": 0,
     "__editorExtras__": {},
     "_parent": null,
@@ -32,8 +32,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -257,
-      "y": -128,
+      "x": 0,
+      "y": 0,
       "z": -1
     },
     "_lrot": {
@@ -49,7 +49,7 @@
       "y": 1,
       "z": 1
     },
-    "_layer": 33554432,
+    "_layer": 1073741824,
     "_euler": {
       "__type__": "cc.Vec3",
       "x": 0,

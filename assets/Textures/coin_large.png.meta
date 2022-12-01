@@ -2,7 +2,7 @@
   "ver": "1.0.23",
   "importer": "image",
   "imported": true,
-  "uuid": "82dae550-672d-4df4-8c18-a59055e2a376",
+  "uuid": "3f85befd-26ee-4474-8ccc-2fad7c649b62",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "82dae550-672d-4df4-8c18-a59055e2a376@6c48a",
-      "displayName": "prize",
+      "uuid": "3f85befd-26ee-4474-8ccc-2fad7c649b62@6c48a",
+      "displayName": "coin_large",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "82dae550-672d-4df4-8c18-a59055e2a376",
+        "imageUuidOrDatabaseUri": "3f85befd-26ee-4474-8ccc-2fad7c649b62",
         "isUuid": true,
         "minfilter": "nearest",
         "magfilter": "nearest",
@@ -33,29 +33,29 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "82dae550-672d-4df4-8c18-a59055e2a376@f9941",
-      "displayName": "prize",
+      "uuid": "3f85befd-26ee-4474-8ccc-2fad7c649b62@f9941",
+      "displayName": "coin_large",
       "id": "f9941",
       "name": "spriteFrame",
       "userData": {
-        "trimType": "auto",
+        "trimType": "none",
         "trimThreshold": 1,
         "rotated": false,
         "offsetX": 0,
         "offsetY": 0,
         "trimX": 0,
         "trimY": 0,
-        "width": 190,
-        "height": 38,
-        "rawWidth": 190,
-        "rawHeight": 38,
+        "width": 18,
+        "height": 18,
+        "rawWidth": 18,
+        "rawHeight": 18,
         "borderTop": 0,
         "borderBottom": 0,
         "borderLeft": 0,
         "borderRight": 0,
         "packable": true,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "82dae550-672d-4df4-8c18-a59055e2a376@6c48a",
+        "imageUuidOrDatabaseUri": "3f85befd-26ee-4474-8ccc-2fad7c649b62@6c48a",
         "atlasUuid": ""
       },
       "ver": "1.0.9",
@@ -70,6 +70,6 @@
     "type": "sprite-frame",
     "fixAlphaTransparencyArtifacts": true,
     "hasAlpha": true,
-    "redirect": "82dae550-672d-4df4-8c18-a59055e2a376@f9941"
+    "redirect": "3f85befd-26ee-4474-8ccc-2fad7c649b62@f9941"
   }
 }

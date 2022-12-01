@@ -2,7 +2,7 @@
   "ver": "1.0.23",
   "importer": "image",
   "imported": true,
-  "uuid": "2cbd212f-cdc9-44a5-8f05-2706747b7e69",
+  "uuid": "0b045df9-7aa8-4463-8e0b-286db0879ced",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "2cbd212f-cdc9-44a5-8f05-2706747b7e69@6c48a",
-      "displayName": "1.4",
+      "uuid": "0b045df9-7aa8-4463-8e0b-286db0879ced@6c48a",
+      "displayName": "jackpot_0_8",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "2cbd212f-cdc9-44a5-8f05-2706747b7e69",
+        "imageUuidOrDatabaseUri": "0b045df9-7aa8-4463-8e0b-286db0879ced",
         "isUuid": true,
         "minfilter": "nearest",
         "magfilter": "nearest",
@@ -33,12 +33,12 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "2cbd212f-cdc9-44a5-8f05-2706747b7e69@f9941",
-      "displayName": "1.4",
+      "uuid": "0b045df9-7aa8-4463-8e0b-286db0879ced@f9941",
+      "displayName": "jackpot_0_8",
       "id": "f9941",
       "name": "spriteFrame",
       "userData": {
-        "trimType": "auto",
+        "trimType": "none",
         "trimThreshold": 1,
         "rotated": false,
         "offsetX": 0,
@@ -55,7 +55,7 @@
         "borderRight": 0,
         "packable": true,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "2cbd212f-cdc9-44a5-8f05-2706747b7e69@6c48a",
+        "imageUuidOrDatabaseUri": "0b045df9-7aa8-4463-8e0b-286db0879ced@6c48a",
         "atlasUuid": ""
       },
       "ver": "1.0.9",
@@ -70,6 +70,6 @@
     "type": "sprite-frame",
     "fixAlphaTransparencyArtifacts": true,
     "hasAlpha": true,
-    "redirect": "2cbd212f-cdc9-44a5-8f05-2706747b7e69@f9941"
+    "redirect": "0b045df9-7aa8-4463-8e0b-286db0879ced@f9941"
   }
 }
